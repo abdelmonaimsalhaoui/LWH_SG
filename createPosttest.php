@@ -6,13 +6,13 @@
 		isset($_POST["correctAnswers"]) && !empty($_POST["correctAnswers"]) &&
 		isset($_POST["timeSpent"]) && !empty($_POST["timeSpent"])){
 
-		AddPretest($_POST["playerName"], $_POST["testName"],$_POST["correctAnswers"],$_POST["timeSpent"]);
+		AddPosttest($_POST["playerName"], $_POST["testName"],$_POST["correctAnswers"],$_POST["timeSpent"]);
 	}
 	else{
 		echo "ERROR: Ooops ! ";
 	}
 
-	function AddPretest($playerName, $testName, $correctAnswers, $timeSpent){
+	function AddPosttest($playerName, $testName, $correctAnswers, $timeSpent){
 		GLOBAL $con;
 
 		$sql = "INSERT INTO Posttests (playerName,testName,correctAnswers,timeSpent) VALUES (?,?,?,?)";
